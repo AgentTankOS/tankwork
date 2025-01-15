@@ -144,7 +144,7 @@ TankWork comes with four pre-configured agents, each with distinct personalities
 - **Analysis Style**: Focuses on sustainable growth patterns and risk management
 - **Tone**: Clear, educational, encouraging
 
-![Gennifer Interface](assets/gennifer_interface.jpeg)
+<img src="assets/gennifer_interface.jpeg" width="200"/>
 
 
 #### 2. Twain
@@ -155,7 +155,7 @@ TankWork comes with four pre-configured agents, each with distinct personalities
 - **Analysis Style**: Evaluates narrative structure and engagement
 - **Tone**: Engaging, story-focused, balanced
 
-![Twain Agent Interface](assets/twain_interface.jpeg)
+<img src="assets/twain_interface.jpeg" width="200"/>
 
 #### 3. Cody
 - **Role**: Technical Web3 Architect
@@ -165,7 +165,7 @@ TankWork comes with four pre-configured agents, each with distinct personalities
 - **Analysis Style**: Technical implementation and security analysis
 - **Tone**: Technical but approachable, systematic
 
-![Cody Agent Interface](assets/cody_interface.jpeg)
+<img src="assets/cody_interface.jpeg" width="200"/>
 
 #### 4. Art
 - **Role**: Creative AI Specialist
@@ -175,7 +175,7 @@ TankWork comes with four pre-configured agents, each with distinct personalities
 - **Analysis Style**: Aesthetic quality and creative innovation
 - **Tone**: Imaginative and expressive
 
-![Art Agent Interface](assets/art_interface.jpeg)
+<img src="assets/art_interface.jpeg" width="200"/>
 
 
 ### Agent Customization
