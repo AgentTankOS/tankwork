@@ -1,0 +1,40 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual env
+venv/
+.env
+*.env
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+*.manifest
+
+# PyInstaller
+*.spec
+dist/
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Test coverage
+.coverage
+.tox/
+
+# Others
+.idea/
+.vscode/
+*.swp
+*.bak
