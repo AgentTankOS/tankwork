@@ -11,7 +11,7 @@ TankWork is an open-source desktop agent framework that enables AI to perceive a
 * Provide continuous audio-visual feedback and action logging
 * Switch seamlessly between assistant and computer control modes
 
-Built for developers and researchers working on autonomous desktop agents, TankWork combines advanced computer vision, voice processing, and system control to create AI assistants that can truly understand, analyze, and interact with computer interfaces.
+Built for developers and researchers working on autonomous desktop agents, TankWork combines advanced computer vision, voice processing, and system control to create AI agents that can truly understand, analyze, and interact with computer interfaces.
 
 ## Key Features
 - 🎯 Direct Computer Control - Voice and text command execution
