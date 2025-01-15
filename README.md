@@ -1,7 +1,7 @@
 # TankWork
 
 Alpha Status
-https://img.shields.io/badge/version-v0.5.0--alpha-orange
+![Version](https://img.shields.io/badge/version-v0.5.0--alpha-orange)
 
 ## Overview
 TankWork is an open-source desktop agent framework that enables AI to perceive and control your computer through computer vision and system-level interactions. Agents can:
