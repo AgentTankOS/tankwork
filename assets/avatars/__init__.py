@@ -1,0 +1,3 @@
+"""
+Avatar images and videos.
+"""

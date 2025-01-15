@@ -1,0 +1,74 @@
+# -----------------------------------------------------------------------------------
+# Core dependencies
+# -----------------------------------------------------------------------------------
+python-dotenv>=0.19.0
+opencv-python>=4.5.0
+pillow>=9.0.0
+google-generativeai>=0.3.0
+aiohttp>=3.8.0
+openai>=1.0.0
+elevenlabs>=0.3.0
+customtkinter>=5.2.0
+numpy>=1.26.0,<1.27.0
+pyautogui>=0.9.54
+certifi>=2023.7.22
+anthropic[bedrock,vertex]>=0.37.1
+pynput>=1.7.6
+beautifulsoup4>=4.12.0
+html2text>=2020.1.16
+Markdown>=3.4.3
+PySide6>=6.5.0
+sounddevice>=0.4.5
+playsound
+psutil
+mss
+
+# -----------------------------------------------------------------------------------
+# Computer Use Stack
+# -----------------------------------------------------------------------------------
+ruff==0.6.7
+pre-commit==3.8.0
+pytest==8.3.3
+pytest-asyncio==0.23.6
+streamlit>=1.38.0
+jsonschema==4.22.0
+boto3>=1.28.57
+google-auth<3,>=2
+gradio>=5.6.0
+screeninfo
+transformers
+qwen-vl-utils
+accelerate
+dashscope
+huggingface_hub
+
+# -----------------------------------------------------------------------------------
+# Windows-specific UI automation (only install if sys_platform == "win32")
+# -----------------------------------------------------------------------------------
+uiautomation; sys_platform == "win32"
+
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Mac-specific dependencies
+# -----------------------------------------------------------------------------------
+pyobjc-core>=10.0; sys_platform == "darwin"
+pyobjc-framework-Cocoa>=10.0; sys_platform == "darwin"
+pyobjc-framework-AVFoundation>=10.0; sys_platform == "darwin"
+pyobjc-framework-Quartz>=10.0; sys_platform == "darwin"
+pyobjc-framework-ApplicationServices>=10.0; sys_platform == "darwin"
+
+# -----------------------------------------------------------------------------------
+# Linux-specific dependencies
+# -----------------------------------------------------------------------------------
+python-xlib>=0.33; sys_platform == "linux"
+python-tk>=3.9; sys_platform == "linux"
+
+# -----------------------------------------------------------------------------------
+# Windows-specific dependencies
+# -----------------------------------------------------------------------------------
+pywin32>=306; sys_platform == "win32"
+
+# -----------------------------------------------------------------------------------
+# Build tools
+# -----------------------------------------------------------------------------------
+pyinstaller>=6.0.0
+cryptography>=41.0.0

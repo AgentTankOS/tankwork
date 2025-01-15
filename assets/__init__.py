@@ -1,0 +1,3 @@
+"""
+Assets package (images, etc.).
+"""

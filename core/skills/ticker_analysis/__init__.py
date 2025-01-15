@@ -1,0 +1,3 @@
+"""
+Ticker analysis subpackage.
+"""
