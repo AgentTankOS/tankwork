@@ -4,6 +4,7 @@ Thanks for your interest in contributing! We're in early development and welcome
 
 ## Focus Areas
 - Alpha testing and feedback!
+- Windows support
 - New Skill development for agent specialization
 - Additional computer use models/providers
 - Advanced computer use capabilities (Model Context Protocol)
