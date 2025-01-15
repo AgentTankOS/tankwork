@@ -22,7 +22,7 @@ Built for developers and researchers working on autonomous desktop agents, TankW
 
 ## System Requirements
 - **Recommended Platform**: macOS with Apple Silicon (M1, M2, M3, M4) for optimal computer-use capabilities
-- **Python Version**: 3.11 or higher
+- **Python Version**: 3.12 or higher
 - **Windows Support**: Coming soon
 
 ## Quick Installation
