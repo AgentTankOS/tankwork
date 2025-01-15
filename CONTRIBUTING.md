@@ -2,6 +2,14 @@
 
 Thanks for your interest in contributing! We're in early development and welcome your help.
 
+## Focus Areas
+- Alpha testing and feedback!
+- New Skill development for agent specialization
+- Additional computer use models/providers
+- Advanced computer use capabilities (Model Context Protocol)
+- Agent features for greater personalization
+- Plugins for key social agent frameworks
+
 ## Quick Start
 
 1. Fork and clone:
@@ -34,13 +42,6 @@ git checkout -b feature-name
 
 2. Make changes and test
 3. Submit a pull request
-
-## Focus Areas
-- New Skill development for agent specialization
-- Additional computer use models/providers
-- Advanced computer use capabilities (Model Context Protocol)
-- Agent features for greater personalization
-- Plugins for key social agent frameworks
 
 ## Questions?
 - Open an issue for bugs/features
