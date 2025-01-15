@@ -1,6 +1,5 @@
 # TankWork
 
-Alpha Status
 ![Version](https://img.shields.io/badge/version-v0.5.0--alpha-orange)
 
 ## Overview
