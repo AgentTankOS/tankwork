@@ -95,7 +95,7 @@ python main.py
 
 ### Assistant Mode
 - Trigger via "Select Region" or "Full Screen" buttons, or voice commands
-- Features sophisticated voice intent determination system
+- Features voice intent determination system
 - Real-time screen/vision analysis with expert skill routing
 - Default Skill: Ticker Analysis
 - Provides intelligent observation and advice based on screen content
@@ -105,7 +105,7 @@ python main.py
 ![Assistant Mode: Ticker Analysis Interface](assets/ticker_analysis_interface.png)
 
 ### Voice Command System
-- Sophisticated voice intent determination for both Assistant and Computer Use modes
+- Voice intent determination for both Assistant and Computer Use modes
 - Natural language processing for command interpretation
 - Seamless switching between modes using voice commands
 - Voice-activated ticker analysis and computer control
