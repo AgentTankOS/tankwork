@@ -49,6 +49,9 @@ class NarrativeProcessor(AvatarObserver):
         self.temperature = narrative_cfg.get('temperature', 0.6)
         self.max_tokens = narrative_cfg.get('max_tokens', 250)
         
+        # Get skip patterns from config
+        self.skip_patterns = narrative_cfg['skip_patterns']
+        
         # Caching / queue config
         self.batch_size = narrative_cfg.get('batch_size', 1)
         self.cache_size = narrative_cfg.get('cache_size', 20)
@@ -103,31 +106,8 @@ class NarrativeProcessor(AvatarObserver):
         else:
             content = message
             
-        skip_patterns = [
-            "Initialization response:",
-            "Command payload:",
-            "Command response:",
-            "Received estimation update",
-            "'coordinate'",
-            "moved mouse to (",
-            "'return'",
-            "'Return'",
-            "pressed keys: return",
-            "'delete'",
-            "pressed keys: delete",
-            "ctrl+a",
-            "'ctrl+a'",
-            "moved mouse to ",
-            "tool use: computer",
-            "input: {'action'",
-            "'screenshot'",
-            "'left_click'",
-            "mouse_move",
-            "'key'",
-            "Tool executed: screenshot"
-        ]
         content_lower = content.lower()
-        return any(pattern.lower() in content_lower for pattern in skip_patterns)
+        return any(pattern.lower() in content_lower for pattern in self.skip_patterns)
 
     async def _translate_message(self, message: str) -> str:
         """
@@ -198,27 +178,6 @@ class NarrativeProcessor(AvatarObserver):
             return await self._translate_message(text)
         return message
 
-    def _clean_gpt_text(self, text: str) -> str:
-        """
-        Remove lines that contain references to tool usage. This way you don't see
-        "Tool Use: computer" or "Tool executed: left_click" in the final UI bubble.
-        """
-        remove_if_contains = [
-            "tool use:",
-            "tool executed:",
-            "input: {'action'",
-            "left_click",
-            "'screenshot'",       # optional
-        ]
-        lines = text.split("\n")
-        cleaned = []
-        for line in lines:
-            lower_line = line.lower()
-            if any(pattern in lower_line for pattern in remove_if_contains):
-                continue
-            cleaned.append(line)
-        return "\n".join(cleaned)
-
     async def _preparation_worker(self):
         """Background task to convert raw logs into 'prepared' messages (translated, etc.)."""
         while not self._shutdown and not self._cancelled:
@@ -243,8 +202,7 @@ class NarrativeProcessor(AvatarObserver):
     async def _run(self):
         """
         Main loop for processing messages. We only do TTS/UI for messages containing
-        "Claude: ", ignoring all other logs. But if GPT lumps tool usage text
-        with "Claude: ", we do an extra cleaning step so you don't see them.
+        "Claude: ", ignoring all other logs.
         """
         self.logger.info(f"[START] Message processor running in loop {id(self.loop)}")
 
@@ -288,9 +246,6 @@ class NarrativeProcessor(AvatarObserver):
                             text = await self._translate_message(text)
 
                         if not self._cancelled:
-                            # Remove lines like "Tool executed: left_click" from final text
-                            text = self._clean_gpt_text(text)
-
                             self.logger.info(f"[ASSISTANT] GPT processed message: {text}")
 
                             # Send to TTS
