@@ -11,7 +11,8 @@ import platform
 import base64
 
 import pyautogui
-from PIL import Image, ImageGrab
+from PIL import Image
+import mss
 from functools import partial
 
 try:
@@ -349,17 +350,19 @@ class TankClaudeController:
         # Wait the configured delay
         await asyncio.sleep(self._screenshot_delay)
 
-        # Calculate bounding box for capture
-        bbox = (
-            self.offset_x,
-            self.offset_y,
-            self.offset_x + self.screen_width,
-            self.offset_y + self.screen_height
-        )
+        # Define the monitor to capture
+        monitor = {
+            "top": self.offset_y,
+            "left": self.offset_x,
+            "width": self.screen_width,
+            "height": self.screen_height,
+            "mon": self.config.display_number,
+        }
 
-        # Force use of multi-monitor “all_screens=True”
-        ImageGrab.grab = partial(ImageGrab.grab, all_screens=True)
-        screenshot = ImageGrab.grab(bbox=bbox)
+        with mss.mss() as sct:
+            sct_img = sct.grab(monitor)
+            # Convert to PIL Image
+            screenshot = Image.frombytes("RGB", sct_img.size, sct_img.bgra, "raw", "BGRX")
 
         base_w, base_h = self.config.scaling.base_width, self.config.scaling.base_height
         current_w, current_h = screenshot.size
