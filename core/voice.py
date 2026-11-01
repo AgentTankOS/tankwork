@@ -229,7 +229,8 @@ class VoiceHandler(AvatarObserver):
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S_%f')
             unique_id = str(uuid.uuid4())[:8]
             if symbol:
-                filename = f"analysis_{symbol}_{timestamp}_{unique_id}.mp3"
+                safe_symbol = ''.join(c if c.isalnum() or c in '-_' else '_' for c in symbol)[:32]
+                filename = f"analysis_{safe_symbol}_{timestamp}_{unique_id}.mp3"
             else:
                 filename = f"analysis_{timestamp}_{unique_id}.mp3"
 
